@@ -74,7 +74,7 @@
   <ItemGroup>
     <Reference Include="KrnlAPI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\KrnlAPI.dll</HintPath>
+      <HintPath>bin\Debug\KrnlAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

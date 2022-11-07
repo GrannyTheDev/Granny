@@ -63,7 +63,7 @@ namespace Granny
             this.MiscStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.JoinStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.TabPanel = new System.Windows.Forms.Panel();
-            this.AutoAttachTimer = new System.Windows.Forms.Timer(this.components);
+            this.InjectTestDLLBtn = new System.Windows.Forms.Button();
             this.ListStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListRefresh)).BeginInit();
             this.Header.SuspendLayout();
@@ -418,6 +418,7 @@ namespace Granny
             // TabPanel
             // 
             this.TabPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.TabPanel.Controls.Add(this.InjectTestDLLBtn);
             this.TabPanel.Controls.Add(this.ScriptsBtn);
             this.TabPanel.Controls.Add(this.MiscBtn);
             this.TabPanel.Location = new System.Drawing.Point(2, 54);
@@ -425,10 +426,19 @@ namespace Granny
             this.TabPanel.Size = new System.Drawing.Size(800, 55);
             this.TabPanel.TabIndex = 8;
             // 
-            // AutoAttachTimer
+            // InjectTestDLLBtn
             // 
-            this.AutoAttachTimer.Enabled = true;
-            this.AutoAttachTimer.Tick += new System.EventHandler(this.AutoAttachTimer_Tick);
+            this.InjectTestDLLBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.InjectTestDLLBtn.FlatAppearance.BorderSize = 0;
+            this.InjectTestDLLBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InjectTestDLLBtn.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.InjectTestDLLBtn.Location = new System.Drawing.Point(528, 3);
+            this.InjectTestDLLBtn.Name = "InjectTestDLLBtn";
+            this.InjectTestDLLBtn.Size = new System.Drawing.Size(248, 39);
+            this.InjectTestDLLBtn.TabIndex = 11;
+            this.InjectTestDLLBtn.Text = "Inject Test exploit i made it:D";
+            this.InjectTestDLLBtn.UseVisualStyleBackColor = false;
+            this.InjectTestDLLBtn.Click += new System.EventHandler(this.InjectTestDLLBtn_Click);
             // 
             // Granny
             // 
@@ -500,7 +510,7 @@ namespace Granny
         private ToolStripMenuItem RemoteSpyStrip;
         private ToolStripMenuItem InfinityYieldStrip;
         private Panel TabPanel;
-        private Timer AutoAttachTimer;
+        private Button InjectTestDLLBtn;
     }
 }
 

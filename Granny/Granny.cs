@@ -373,12 +373,9 @@ namespace Granny
             MainAPI.Execute("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()");
         }
 
-        private void AutoAttachTimer_Tick(object sender, EventArgs e)
+        private void InjectTestDLLBtn_Click(object sender, EventArgs e)
         {
-            if (Process.GetProcessesByName("RobloxPlayerBeta").Length >= 1)
-            {
-                MainAPI.Inject();
-            }
+            MainAPI.InjectTestDLL();
         }
     }
 }
