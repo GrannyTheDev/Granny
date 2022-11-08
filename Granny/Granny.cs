@@ -377,5 +377,31 @@ namespace Granny
         {
             MainAPI.InjectTestDLL();
         }
+
+        private void UpdateKrnlDllStrip_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists("krnl.dll"))
+            {
+                wc.DownloadFile("https://k-storage.com/bootstrapper/files/krnl.dll", "krnl.dll");
+            }
+            else
+            {
+                File.Delete("krnl.dll");
+                wc.DownloadFile("https://k-storage.com/bootstrapper/files/krnl.dll", "krnl.dll");
+            }
+        }
+
+        private void UpdateTestDllStrip_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists("test.dll"))
+            {
+                wc.DownloadFile("https://raw.githubusercontent.com/GrannyTheDev/Granny/master/Granny/bin/Debug/test.dll", "test.dll");
+            }
+            else
+            {
+                File.Delete("test.dll");
+                wc.DownloadFile("https://raw.githubusercontent.com/GrannyTheDev/Granny/master/Granny/bin/Debug/test.dll", "test.dll");
+            }
+        }
     }
 }
