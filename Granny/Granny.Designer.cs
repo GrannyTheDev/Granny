@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+using System.Windows.Forms;
 
 namespace Granny
 {
@@ -38,6 +38,8 @@ namespace Granny
             this.DeleteStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.ListRefresh = new System.IO.FileSystemWatcher();
             this.AttachBtn = new System.Windows.Forms.Button();
+            this.UpdateKrnlDllContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.UpdateDllStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.OpenFileBtn = new System.Windows.Forms.Button();
             this.ExecuteFileBtn = new System.Windows.Forms.Button();
@@ -64,13 +66,17 @@ namespace Granny
             this.JoinStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.TabPanel = new System.Windows.Forms.Panel();
             this.InjectTestDLLBtn = new System.Windows.Forms.Button();
+            this.UpdateTestDllContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.UpdateTestDllStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.ListStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListRefresh)).BeginInit();
+            this.UpdateKrnlDllContext.SuspendLayout();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FolderWatcher)).BeginInit();
             this.ScriptsStrip.SuspendLayout();
             this.MiscStrip.SuspendLayout();
             this.TabPanel.SuspendLayout();
+            this.UpdateTestDllContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // ScriptList
@@ -137,6 +143,7 @@ namespace Granny
             // AttachBtn
             // 
             this.AttachBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.AttachBtn.ContextMenuStrip = this.UpdateKrnlDllContext;
             this.AttachBtn.FlatAppearance.BorderSize = 0;
             this.AttachBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AttachBtn.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
@@ -147,6 +154,24 @@ namespace Granny
             this.AttachBtn.Text = "Attach";
             this.AttachBtn.UseVisualStyleBackColor = false;
             this.AttachBtn.Click += new System.EventHandler(this.AttachBtn_Click);
+            // 
+            // UpdateKrnlDllContext
+            // 
+            this.UpdateKrnlDllContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.UpdateKrnlDllContext.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.UpdateKrnlDllContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UpdateDllStrip});
+            this.UpdateKrnlDllContext.Name = "ListStrip";
+            this.UpdateKrnlDllContext.Size = new System.Drawing.Size(187, 28);
+            // 
+            // UpdateDllStrip
+            // 
+            this.UpdateDllStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(44)))));
+            this.UpdateDllStrip.ForeColor = System.Drawing.Color.White;
+            this.UpdateDllStrip.Name = "UpdateDllStrip";
+            this.UpdateDllStrip.Size = new System.Drawing.Size(186, 24);
+            this.UpdateDllStrip.Text = "Update Krnl DLL";
+            this.UpdateDllStrip.Click += new System.EventHandler(this.UpdateKrnlDllStrip_Click);
             // 
             // ClearBtn
             // 
@@ -264,7 +289,7 @@ namespace Granny
             this.Title.AutoSize = true;
             this.Title.Location = new System.Drawing.Point(3, 23);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(52, 17);
+            this.Title.Size = new System.Drawing.Size(57, 19);
             this.Title.TabIndex = 0;
             this.Title.Text = "Granny";
             // 
@@ -417,18 +442,19 @@ namespace Granny
             // 
             // TabPanel
             // 
-            this.TabPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.TabPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TabPanel.Controls.Add(this.InjectTestDLLBtn);
             this.TabPanel.Controls.Add(this.ScriptsBtn);
             this.TabPanel.Controls.Add(this.MiscBtn);
-            this.TabPanel.Location = new System.Drawing.Point(2, 54);
+            this.TabPanel.Location = new System.Drawing.Point(-4, 39);
             this.TabPanel.Name = "TabPanel";
-            this.TabPanel.Size = new System.Drawing.Size(800, 55);
+            this.TabPanel.Size = new System.Drawing.Size(806, 70);
             this.TabPanel.TabIndex = 8;
             // 
             // InjectTestDLLBtn
             // 
             this.InjectTestDLLBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.InjectTestDLLBtn.ContextMenuStrip = this.UpdateTestDllContext;
             this.InjectTestDLLBtn.FlatAppearance.BorderSize = 0;
             this.InjectTestDLLBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InjectTestDLLBtn.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
@@ -438,7 +464,24 @@ namespace Granny
             this.InjectTestDLLBtn.TabIndex = 11;
             this.InjectTestDLLBtn.Text = "Inject Test exploit i made it:D";
             this.InjectTestDLLBtn.UseVisualStyleBackColor = false;
-            this.InjectTestDLLBtn.Click += new System.EventHandler(this.InjectTestDLLBtn_Click);
+            this.InjectTestDLLBtn.Click += new System.EventHandler(this.UpdateTestDllStrip_Click);
+            // 
+            // UpdateTestDllContext
+            // 
+            this.UpdateTestDllContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.UpdateTestDllContext.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.UpdateTestDllContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UpdateTestDllStrip});
+            this.UpdateTestDllContext.Name = "ListStrip";
+            this.UpdateTestDllContext.Size = new System.Drawing.Size(187, 28);
+            // 
+            // UpdateTestDllStrip
+            // 
+            this.UpdateTestDllStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(44)))));
+            this.UpdateTestDllStrip.ForeColor = System.Drawing.Color.White;
+            this.UpdateTestDllStrip.Name = "UpdateTestDllStrip";
+            this.UpdateTestDllStrip.Size = new System.Drawing.Size(186, 24);
+            this.UpdateTestDllStrip.Text = "Update Test DLL";
             // 
             // Granny
             // 
@@ -466,12 +509,14 @@ namespace Granny
             this.Load += new System.EventHandler(this.Granny_Load);
             this.ListStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ListRefresh)).EndInit();
+            this.UpdateKrnlDllContext.ResumeLayout(false);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FolderWatcher)).EndInit();
             this.ScriptsStrip.ResumeLayout(false);
             this.MiscStrip.ResumeLayout(false);
             this.TabPanel.ResumeLayout(false);
+            this.UpdateTestDllContext.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -511,6 +556,9 @@ namespace Granny
         private ToolStripMenuItem InfinityYieldStrip;
         private Panel TabPanel;
         private Button InjectTestDLLBtn;
+        private ContextMenuStrip UpdateKrnlDllContext;
+        private ToolStripMenuItem UpdateDllStrip;
+        private ContextMenuStrip UpdateTestDllContext;
+        private ToolStripMenuItem UpdateTestDllStrip;
     }
 }
-
